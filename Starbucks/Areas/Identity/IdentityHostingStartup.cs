@@ -16,12 +16,12 @@ namespace Starbucks.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<AuthDbContext>(options =>
+                services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("AuthDbContextConnection")));
 
                 services.AddDefaultIdentity<StarbuksUser>()
-                    .AddEntityFrameworkStores<AuthDbContext>();
+                    .AddEntityFrameworkStores<AppDbContext>();
             });
         }
     }
