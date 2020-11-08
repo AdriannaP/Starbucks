@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Starbucks.Areas.Identity.Data;
 using Starbucks.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Starbucks
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
         public DbSet<Coffee> Coffee { get; set; }
-
+        public DbSet<StarbuksUser> StarbuksUsers { get; set; }
 
     }
 }
